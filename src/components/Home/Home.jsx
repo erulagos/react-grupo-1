@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ItemList from "../ItemList/ItemList";
 
 export default function HomePage() {
     const imgBanner = './slide-bg-1.jpg';
@@ -18,7 +19,7 @@ export default function HomePage() {
                 </div>
             </div>
             <div className="container mx-auto max-w-[1170px]">
-                <h1>Pagina Principal</h1>
+                <ItemList />
             </div>
         </div>
     );
