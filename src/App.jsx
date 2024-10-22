@@ -8,6 +8,7 @@ import ContactPage from './components/Contact/Contact';
 import ProductsPage from './components/Products/Products';
 import ItemDetail from './components/ItemDetail/ItemDetail';
 
+
 function App() {
     return (
         <>
@@ -16,6 +17,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path='/products' element={<ProductsPage />} />
+                    <Route path='/products/:productId' element={<ItemDetail />} />
                     <Route path='/about' element={<AboutPage />} />
                     <Route path='/contact' element={<ContactPage />} />
                 </Routes>
