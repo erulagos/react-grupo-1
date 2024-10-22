@@ -6,7 +6,8 @@ export const products = [
         despcription: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno',
         stock: 5,
         img: 'https://demos.webicode.com/html/eco-shop-html/html/images/product-2-1.jpg',
-        category: 'pantalones'
+        category: 'pantalones',
+        sizes: ['S', 'M', 'L']
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ export const products = [
         despcription: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno',
         stock: 5,
         img: 'https://demos.webicode.com/html/eco-shop-html/html/images/product-2-2.jpg',
-        category: 'pantalones'
+        category: 'pantalones',
+        sizes: ['S', 'M', 'L']
     },
     {
         id: 3,
@@ -24,7 +26,8 @@ export const products = [
         despcription: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno',
         stock: 5,
         img: 'https://demos.webicode.com/html/eco-shop-html/html/images/product-2-3.jpg',
-        category: 'pantalones'
+        category: 'pantalones',
+        sizes: ['S', 'M', 'L']
     },
     {
         id: 4,
@@ -33,7 +36,8 @@ export const products = [
         despcription: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno',
         stock: 5,
         img: 'https://demos.webicode.com/html/eco-shop-html/html/images/product-2-4.jpg',
-        category: 'pantalones'
+        category: 'pantalones',
+        sizes: ['S', 'M', 'L']
     },
     {
         id: 5,
@@ -42,7 +46,8 @@ export const products = [
         despcription: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno',
         stock: 5,
         img: 'https://demos.webicode.com/html/eco-shop-html/html/images/product-2-1.jpg',
-        category: 'buzo'
+        category: 'buzo',
+        sizes: ['S', 'M', 'L']
     },
     {
         id: 6,
@@ -51,8 +56,8 @@ export const products = [
         despcription: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno',
         stock: 5,
         img: 'https://demos.webicode.com/html/eco-shop-html/html/images/product-2-2.jpg',
-        category: 'buzo'
-
+        category: 'buzo',
+        sizes: ['S', 'M', 'L']
     },
     {
         id: 7,
@@ -61,7 +66,8 @@ export const products = [
         despcription: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno',
         stock: 5,
         img: 'https://demos.webicode.com/html/eco-shop-html/html/images/product-2-3.jpg',
-        category: 'buzo'
+        category: 'buzo',
+        sizes: ['S', 'M', 'L']
     },
     {
         id: 8,
@@ -70,7 +76,8 @@ export const products = [
         despcription: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno',
         stock: 5,
         img: 'https://demos.webicode.com/html/eco-shop-html/html/images/product-2-4.jpg',
-        category: 'buzo'
+        category: 'buzo',
+        sizes: ['S', 'M', 'L']
     },
     {
         id: 9,
@@ -79,7 +86,8 @@ export const products = [
         despcription: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno',
         stock: 5,
         img: 'https://demos.webicode.com/html/eco-shop-html/html/images/product-2-1.jpg',
-        category: 'buzo'
+        category: 'buzo',
+        sizes: ['S', 'M', 'L']
     },
     {
         id: 10,
@@ -88,7 +96,8 @@ export const products = [
         despcription: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno',
         stock: 5,
         img: 'https://demos.webicode.com/html/eco-shop-html/html/images/product-2-2.jpg',
-        category: 'buzo'
+        category: 'buzo',
+        sizes: ['S', 'M', 'L']
     },
     {
         id: 11,
@@ -97,7 +106,8 @@ export const products = [
         despcription: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno',
         stock: 5,
         img: 'https://demos.webicode.com/html/eco-shop-html/html/images/product-2-3.jpg',
-        category: 'buzo'
+        category: 'buzo',
+        sizes: ['S', 'M', 'L']
     },
     {
         id: 12,
@@ -106,16 +116,17 @@ export const products = [
         despcription: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno',
         stock: 5,
         img: 'https://demos.webicode.com/html/eco-shop-html/html/images/product-2-4.jpg',
-        category: 'buzo'
+        category: 'buzo',
+        sizes: ['S', 'M', 'L']
     },
 ];
 
-export const getProducts = () =>{
-    return new Promise((res) =>{
-        setTimeout(() =>{
-            res(products)
-        }, 3000);
-    })
+export const getProducts = () => {
+    return new Promise((res) => {
+        setTimeout(() => {
+            res(products);
+        }, 2500);
+    });
 };
 
 export const getProductById = (id) => {
@@ -123,6 +134,15 @@ export const getProductById = (id) => {
         const productoFiltrado = products.find((product) => product.id === parseInt(id));
         setTimeout(() => {
             res(productoFiltrado);
+        }, 2000);
+    });
+};
+
+export const getProductByCategory = (category) => {
+    return new Promise((res) => {
+        const productosFiltrados = products.filter((product) => product.category === category);
+        setTimeout(() => {
+            res(productosFiltrados);
         }, 2000);
     });
 };
