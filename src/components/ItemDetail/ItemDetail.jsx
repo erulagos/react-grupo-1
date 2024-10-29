@@ -9,6 +9,7 @@ export default function ItemDetail() {
     const { productId } = useParams();
     const [product, setProduct] = useState({product: 0, stock: 0});
 
+    // SETEO EL LOADING EN TRUE
     const [loading, setLoading] = useState(true);
 
      // CARGO LA DATA DE LA MOCK
@@ -39,12 +40,11 @@ export default function ItemDetail() {
     // PRECIO TOTAL
     const precioTotal = product.price * quantity;
 
-   
 
+    // SIN HAY PRODUCT CARGA LOADING O PRODUCT NOT FOUND
     if (loading) {
         return <div className='container mx-auto max-w-[1170px]'><Loading /></div>;
     }
-
     if (!product) {
         return <div>Product not found</div>;
     }
