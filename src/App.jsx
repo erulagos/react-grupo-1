@@ -7,6 +7,7 @@ import AboutPage from './components/About/About';
 import ContactPage from './components/Contact/Contact';
 import ProductsPage from './components/Products/Products';
 import ItemDetail from './components/ItemDetail/ItemDetail';
+import ProductsCategory from './components/Category/Category';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path='/products' element={<ProductsPage />} />
+                    <Route path='/category/:categoryId' element={<ProductsCategory />} />
                     <Route path='/products/:productId' element={<ItemDetail />} />
                     <Route path='/about' element={<AboutPage />} />
                     <Route path='/contact' element={<ContactPage />} />
