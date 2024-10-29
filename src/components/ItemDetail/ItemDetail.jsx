@@ -1,18 +1,28 @@
 import React, { useEffect, useState } from 'react';
+
 import { useParams } from 'react-router-dom';
 import { getProductById } from '../../data/asyncMock.jsx';
+
 import Loading from '../Loading/Loading.jsx';
 
 export default function ItemDetail() {
     const { productId } = useParams();
-    const [product, setProduct] = useState(null);
+    const [product, setProduct] = useState({product: 0, stock: 0});
+
     const [loading, setLoading] = useState(true);
+
+     // CARGO LA DATA DE LA MOCK
+     useEffect(() => {
+        getProductById(productId).then((data) => {
+            setProduct(data);
+            setLoading(false);
+        });
+    }, [productId]);
 
     // ESTADO PARA LA CANTIDAD
     const [quantity, setQuantity] = useState(1);
 
     // DOS FUNCIONES PARA INCREMENTAR Y DECREMENTAR 
-    
     //La función decrementQuantity se encarga de disminuir la cantidad de un producto seleccionado, siempre y cuando la cantidad actual sea mayor que 1.
     const decrementQuantity = () => {
         if(quantity > 1 ){ 
@@ -26,13 +36,10 @@ export default function ItemDetail() {
         }
     }
 
-    // CARGO LA DATA DE LA MOCK
-    useEffect(() => {
-        getProductById(productId).then((data) => {
-            setProduct(data);
-            setLoading(false);
-        });
-    }, [productId]);
+    // PRECIO TOTAL
+    const precioTotal = product.price * quantity;
+
+   
 
     if (loading) {
         return <div className='container mx-auto max-w-[1170px]'><Loading /></div>;
@@ -67,7 +74,9 @@ export default function ItemDetail() {
                         <button onClick={incrementQuantity} className='w-[50px] border-[1px] text-[20px] flex justify-center'> + </button>
                     </div>
                     
-                    <p className='text-[20px] my-[20px]'>Precio: ${product.price}</p>
+                    <p className='text-[20px] my-[20px]'>Precio: ${product.price} por unidad</p>
+
+                    <p className='text-[20px] my-[20px]'>Precio Total: ${precioTotal}</p>
                     
                     <button className='bg-[#171e27] text-[#ffffff] text-[20px] px-[20px] py-[5px] hover:bg-[#172625]'>Comprar</button>
                     
