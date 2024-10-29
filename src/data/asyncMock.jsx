@@ -4,7 +4,7 @@ export const products = [
         name: 'stone cup',
         price: 299,
         despcription: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno',
-        stock: 5,
+        stock: 10,
         img: 'https://demos.webicode.com/html/eco-shop-html/html/images/product-2-1.jpg',
         category: 'pantalones',
         sizes: ['S', 'M', 'L']
