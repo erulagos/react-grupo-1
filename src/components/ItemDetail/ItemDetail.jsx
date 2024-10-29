@@ -12,18 +12,21 @@ export default function ItemDetail() {
     const [quantity, setQuantity] = useState(1);
 
     // DOS FUNCIONES PARA INCREMENTAR Y DECREMENTAR 
+    
+    //La función decrementQuantity se encarga de disminuir la cantidad de un producto seleccionado, siempre y cuando la cantidad actual sea mayor que 1.
     const decrementQuantity = () => {
-        if(quantity > 1 ){
+        if(quantity > 1 ){ 
             setQuantity(quantity - 1)
         }
     }
-
+    // La función incrementQuantity se encarga de incrementar la cantidad de un producto seleccionado, siempre y cuando la cantidad actual sea menor que el stock disponible del producto. 
     const incrementQuantity = () => {
-        if(quantity < product.stock){
+        if(quantity < product.stock){ //
             setQuantity(quantity + 1)
         }
     }
 
+    // CARGO LA DATA DE LA MOCK
     useEffect(() => {
         getProductById(productId).then((data) => {
             setProduct(data);
