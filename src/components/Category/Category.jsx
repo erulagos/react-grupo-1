@@ -18,12 +18,12 @@ export default function ProductsCategory(){
     const {categoryId} = useParams();
 
     useEffect (() => {
+        setLoading(true);
         getProductByCategory(categoryId)
             .then((data) => setProducts(data))
             .catch((err) => console.log(err))
             .finally(() => setLoading(false));
     }, [categoryId]);
-
 
 
     return(

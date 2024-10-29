@@ -3,9 +3,9 @@ import { getProducts } from "../../data/asyncMock"
 import { useEffect, useState } from "react"
 import Loading from "../Loading/Loading";
 
-export default function ItemList({products: initialProducts}){
+export default function ItemList({ products: initialProducts }){
     const [products, setProducts] = useState(initialProducts || []);
-    const [loading, setLoading] = useState(initialProducts);
+    const [loading, setLoading] = useState(!initialProducts);
 
     useEffect(() => {
         if(!initialProducts) {
@@ -17,14 +17,6 @@ export default function ItemList({products: initialProducts}){
             setLoading(false)
         }
     }, [initialProducts]);
-
-    useEffect(() => {
-        getProducts().then((data) =>{
-            setProducts(data)
-            setLoading(false)
-        });
-    }, []);
-
 
     return(
         <>
